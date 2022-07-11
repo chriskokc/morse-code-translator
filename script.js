@@ -46,7 +46,7 @@ const handleUserInput = (event) => {
 };
 
 const clear = () => {
-    outputText.innerHTML = "There you go! Here is your translate: ";
+    outputText.innerHTML = "";
 };
 
 // attach event listener

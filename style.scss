@@ -54,8 +54,13 @@ main {
     margin: 0 1rem;
 }
 
-.small-title, .translator__instruction, .translator__label, .result-text {
+.small-title, .translator__instruction, .translator__label, .result-statement {
     margin: 1rem;
+    font-size: 1.1rem;
+}
+
+.result-text {
+    margin: 1.5rem;
     font-size: 1.1rem;
 }
 
