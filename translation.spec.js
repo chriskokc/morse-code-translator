@@ -1,5 +1,5 @@
 import { expect, it } from "@jest/globals";
-import { translateToMorseCode } from "./translation";
+import { translateToMorseCode } from "./translation.js";
 
 it("should translate the word morse to -- --- .-. ... .", () => {
     const result = translateToMorseCode("morse");
