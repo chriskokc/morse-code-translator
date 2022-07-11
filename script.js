@@ -1,5 +1,7 @@
+import { translateToMorseCode } from "./translation.js";
+
 // create an obj to store morse code for each letter
-const morseCode = {
+export const morseCode = {
     "A": ".-",
     "B": "-...",
     "C": "-.-.",
@@ -27,37 +29,28 @@ const morseCode = {
     "Z": "--.."
 }
 
+let result = "";
+
 // select DOM objects
 const userInput = document.querySelector("#translator__input-field");
 const outputText = document.querySelector(".result-text");
+const resetBtn = document.querySelector("#reset-btn");
 
 // functions declaration
 
 const handleUserInput = (event) => {
     const inputText = event.target.value.toUpperCase();
     const outputStr = translateToMorseCode(inputText);
-    return outputStr;
+    result = outputStr;
+    outputText.innerHTML = result;
 };
 
-// do translation
-const translateToMorseCode = (englishSentence) => {
-    const englishWordsArr = englishSentence.split(" ");
-    const translatedEnglishWordsArr = englishWordsArr.map((word) => {
-        let translatedWord = "";
-        for (let i = 0; i < word.length; i++) {
-            if (Object.keys(morseCode).includes(word[i])) {
-                translatedWord += `${morseCode[word[i]]} `;
-            }
-        }
-        return translatedWord;
-    });
-    return translatedEnglishWordsArr.join("");
+const clear = () => {
+    outputText.innerHTML = "There you go! Here is your translate: ";
 };
-
-// return an ouput
-
 
 // attach event listener
 userInput.addEventListener("input", handleUserInput);
+resetBtn.addEventListener("click", clear);
 
 
