@@ -15,3 +15,8 @@ it("should translate the word translator to - .-. .- -. ... .-.. .- - --- .-.", 
     const result = translateToMorseCode("translator");
     expect(result).toBe("- .-. .- -. ... .-.. .- - --- .-.");
 })
+
+it("should translate the sentence 'this is an example' to - .... .. ... .. ... .- -. . -..- .- -- .--. .-.. .", () => {
+    const result = translateToMorseCode("This is an example");
+    expect(result).toBe("- .... .. ... .. ... .- -. . -..- .- -- .--. .-.. .");
+})
